@@ -2,10 +2,7 @@
   "expo": {
     "name": "Profit_First",
     "slug": "Profit_First",
-    
-      "scheme": "Profit_First",
-    
-    
+    "scheme": "Profit_First",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -30,7 +27,19 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      ["expo-build-properties", {
+        "ios": {
+          "extrapods": [
+            {
+              "name": "simdjson",
+              "configurations": ["Debug", "Release"],
+              "path": "../node_modules/@nozbe/simdjson",
+              "moduler_header": true
+            }
+          ]
+        }
+      }]
     ]
   }
 }
